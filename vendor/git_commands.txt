@@ -1,0 +1,300 @@
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in test/fixtures/snippets.yml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in test/helpers/snippets_helper_test.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in test/models/snippet_test.rb.
+The file will have its original line endings in your working directory.
+ 14 files changed, 114 insertions(+)
+ create mode 100644 app/assets/javascripts/snippets.js.coffee
+ create mode 100644 app/assets/stylesheets/snippets.css.scss
+ create mode 100644 app/controllers/snippets_controller.rb
+ create mode 100644 app/helpers/snippets_helper.rb
+ create mode 100644 app/models/snippet.rb
+ create mode 100644 app/views/snippets/index.html.erb
+ create mode 100644 db/migrate/20150718195228_create_snippets.rb
+ create mode 100644 db/schema.rb
+ create mode 100644 test/controllers/snippets_controller_test.rb
+ create mode 100644 test/fixtures/snippets.yml
+ create mode 100644 test/helpers/snippets_helper_test.rb
+ create mode 100644 test/models/snippet_test.rb
+
+C:\Users\Roderick\Snippets>git push master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\Roderick\Snippets>git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository us
+ing
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+C:\Users\Roderick\Snippets>git -h
+Unknown option: -h
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+C:\Users\Roderick\Snippets>git help
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Roderick\Snippets>git help -g
+The common Git guides are:
+
+   attributes   Defining attributes per path
+   glossary     A Git glossary
+   ignore       Specifies intentionally untracked files to ignore
+   modules      Defining submodule properties
+   revisions    Specifying revisions and ranges for Git
+   tutorial     A tutorial introduction to Git (for version 1.5.1 or newer)
+   workflows    An overview of recommended workflows with Git
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Roderick\Snippets>git status
+On branch master
+nothing to commit, working directory clean
+
+C:\Users\Roderick\Snippets>git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository us
+ing
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+C:\Users\Roderick\Snippets>git remote add Snippet
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+C:\Users\Roderick\Snippets>git remote add -m Snippet
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+C:\Users\Roderick\Snippets>git remote -v
+heroku  https://git.heroku.com/evening-thicket-2483.git (fetch)
+heroku  https://git.heroku.com/evening-thicket-2483.git (push)
+
+C:\Users\Roderick\Snippets>git remote add pb https://github.com/rholmes69/Snippe
+ts
+
+C:\Users\Roderick\Snippets>git remove -v
+git: 'remove' is not a git command. See 'git --help'.
+
+Did you mean this?
+        remote
+
+C:\Users\Roderick\Snippets>git remote -v
+heroku  https://git.heroku.com/evening-thicket-2483.git (fetch)
+heroku  https://git.heroku.com/evening-thicket-2483.git (push)
+pb      https://github.com/rholmes69/Snippets (fetch)
+pb      https://github.com/rholmes69/Snippets (push)
+
+C:\Users\Roderick\Snippets>git push pb
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/rholmes69/Snippets/'
+
+C:\Users\Roderick\Snippets>git push pb
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+remote: Repository not found.
+fatal: repository 'https://github.com/rholmes69/Snippets/' not found
+
+C:\Users\Roderick\Snippets>git push pb
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/rholmes69/Snippets/'
+
+C:\Users\Roderick\Snippets>git push pb
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+remote: Repository not found.
+fatal: repository 'https://github.com/rholmes69/Snippets/' not found
+
+C:\Users\Roderick\Snippets>git remote -v
+heroku  https://git.heroku.com/evening-thicket-2483.git (fetch)
+heroku  https://git.heroku.com/evening-thicket-2483.git (push)
+pb      https://github.com/rholmes69/Snippets (fetch)
+pb      https://github.com/rholmes69/Snippets (push)
+
+C:\Users\Roderick\Snippets>git remote add pb https://github.com/rholmes69/Snippe
+ts
+fatal: remote pb already exists.
+
+C:\Users\Roderick\Snippets>git remote add pb1 https://github.com/rholmes69/Snipp
+ets
+
+C:\Users\Roderick\Snippets>git remote push pb1
+error: Unknown subcommand: push
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags|--no-tags] [--mir
+ror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete |<branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)..
+.]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+C:\Users\Roderick\Snippets>git remote push pb1 https://github.com/rholmes69/Snip
+pets
+error: Unknown subcommand: push
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags|--no-tags] [--mir
+ror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete |<branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)..
+.]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+C:\Users\Roderick\Snippets>git remote show
+heroku
+pb
+pb1
+
+C:\Users\Roderick\Snippets>git push pb1 master
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+remote: Repository not found.
+fatal: repository 'https://github.com/rholmes69/Snippets/' not found
+
+C:\Users\Roderick\Snippets>git push pb1 master
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+To https://github.com/rholmes69/Snippets
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/rholmes69/Snippets'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\Roderick\Snippets>git push pb1
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+To https://github.com/rholmes69/Snippets
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/rholmes69/Snippets'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\Roderick\Snippets>git pull
+fatal: No remote repository specified.  Please, specify either a URL or a
+remote name from which new revisions should be fetched.
+
+C:\Users\Roderick\Snippets>git pull https://github.com/rholmes69/Snippets
+warning: no common commits
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/rholmes69/Snippets
+ * branch            HEAD       -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+C:\Users\Roderick\Snippets>git push pb1
+Username for 'https://github.com': rholmes69
+Password for 'https://rholmes69@github.com':
+Counting objects: 99, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (83/83), done.
+Writing objects: 100% (98/98), 19.06 KiB | 0 bytes/s, done.
+Total 98 (delta 10), reused 0 (delta 0)
+To https://github.com/rholmes69/Snippets
+   147d191..f88102b  master -> master
+
+C:\Users\Roderick\Snippets>

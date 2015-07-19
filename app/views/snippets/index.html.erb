@@ -1,5 +1,6 @@
 <h1>Snippets#index</h1>
 <p>Find me in app/views/snippets/index.html.erb</p>
+<div>
 <% @snippet.each do |snippet| %>
 	<h2><%= snippet.title %></h2>
 	<%= snippet.snippet %>
@@ -11,6 +12,9 @@
 <% end %>
 </ul>
 
+
+</div>
+
 </br>
 
 <table class="table table-bordered table-condensed">
@@ -21,11 +25,56 @@
 <% @snippet.each do |snippet| %>
 <tr>
 <td><%= snippet.title %></td>
-<td><button class="btn btn-success">Edit</button>
+<td><button class="btn btn-success"><span class="glyphicon glyphicon-home">Edit</button>
 </tr>
 <% end %>
 </table>
-<button class="btn btn-success btn-small">Save</button>
-<button class="btn btn-warning btn-small">Cancel</button>
+<button class="btn btn-success btn-small"><span class="glyphicon glyphicon-home">Save</button>
+<button class="btn btn-warning btn-small"><span class="glyphicon glyphicon-home">Cancel</button>
+
+<div ng-controller="ExampleController">
+  <div ng-repeat="innerList in list" ng-init="outerIndex = $index">
+    <div ng-repeat="value in innerList" ng-init="innerIndex = $index">
+       <span class="example-init">list[ {{outerIndex}} ][ {{innerIndex}} ] = {{value}};</span>
+    </div>
+  </div>
+
+  <div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
+  <div id="grid2" ui-grid="{ data: showMetrics }" class="grid"></div>
+
+ <div ng-controller="MainCtrl">
+      <button id="footerButton" class="btn btn-success" ng-click="toggleFooter()"><span class="glyphicon glyphicon-home">Toggle Grid Footer</button>
+      <button class="btn btn-success" ng-click="toggleColumnFooter()"><span class="glyphicon glyphicon-home">Toggle Column Footer</button>
+      <div id="grid3" ui-grid="gridOptions" class="grid"></div>
+    </div>
+</div>
 
 
+<div class="container" ng-app="app" ng-controller="Controller">
+
+    <h3>Angular Modal Service</h3>
+     <a class="btn btn-default" href ng-click="show()">Show a Modal</a>
+     <p>{{message}}</p>
+     
+     <!-- The actual modal template, just a bit o bootstrap -->
+     <script type="text/ng-template" id="modal.html">
+         <div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Yes or No?</h4>
+              </div>
+              <div class="modal-body">
+                <p>It''s your call...</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-home">No</button>
+                <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-home">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+     </script>
+    
+</div>
