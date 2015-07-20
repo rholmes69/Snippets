@@ -1,5 +1,5 @@
 
-var app = angular.module('initExample', ['angularModalService', 'ngTouch','ui.grid'])
+var app = angular.module('initExample', ['angularModalService', 'ngTouch','ui.grid','angularTreeview'])
 
 app.controller('ExampleController', ['$scope', function($scope) {
       $scope.list = [['a', 'b'], ['c', 'd']];
@@ -89,7 +89,7 @@ $scope.gridOptions = {
         { field: 'age', aggregationType: uiGridConstants.aggregationTypes.avg, aggregationHideLabel: true, width: '13%' },
         { name: 'ageMin', field: 'age', aggregationType: uiGridConstants.aggregationTypes.min, width: '13%', displayName: 'Age for min' },
         { name: 'ageMax', field: 'age', aggregationType: uiGridConstants.aggregationTypes.max, width: '13%', displayName: 'Age for max' },
-        { name: 'customCellTemplate', field: 'age', width: '14%', footerCellTemplate: '<div class="ui-grid-cell-contents" style="background-color: Red;color: White">custom template</div>' },
+        { name: 'customCellTemplate', field: 'age', width: '14%', footerCellTemplate: '<div class="ui-grid-cell-contents" ><button class="btn btn-success">custom cell template</button></div>' },
         { name: 'registered', field: 'registered', width: '20%', cellFilter: 'date', footerCellFilter: 'date', aggregationType: uiGridConstants.aggregationTypes.max }
     ],
     data: data,
@@ -115,5 +115,68 @@ $http.get('/data/500_complex.json')
     });
     $scope.gridOptions.data = data;
   });
-  
+
 }]);
+
+
+  //test controller
+  app.controller('myController', function($scope){
+
+  	//test tree model 1
+    $scope.roleList1 = [
+        { "roleName" : "User", "roleId" : "role1", "children" : [
+          { "roleName" : "subUser1", "roleId" : "role11", "children" : [] },
+          { "roleName" : "subUser2", "roleId" : "role12", "children" : [
+            { "roleName" : "subUser2-1", "roleId" : "role121", "children" : [
+              { "roleName" : "subUser2-1-1", "roleId" : "role1211", "children" : [] },
+              { "roleName" : "subUser2-1-2", "roleId" : "role1212", "children" : [] }
+            ]}
+          ]}
+        ]},
+
+        { "roleName" : "Admin", "roleId" : "role2", "children" : [] },
+
+        { "roleName" : "Guest", "roleId" : "role3", "children" : [] }
+      ];
+
+  	//test tree model 2
+    $scope.roleList2 = [
+        { "roleName" : "User", "roleId" : "role1", "children" : [
+          { "roleName" : "subUser1", "roleId" : "role11", "collapsed" : true, "children" : [] },
+          { "roleName" : "subUser2", "roleId" : "role12", "collapsed" : true, "children" : [
+            { "roleName" : "subUser2-1", "roleId" : "role121", "children" : [
+              { "roleName" : "subUser2-1-1", "roleId" : "role1211", "children" : [] },
+              { "roleName" : "subUser2-1-2", "roleId" : "role1212", "children" : [] }
+            ]}
+          ]}
+        ]},
+
+        { "roleName" : "Admin", "roleId" : "role2", "children" : [
+          { "roleName" : "subAdmin1", "roleId" : "role11", "collapsed" : true, "children" : [] },
+          { "roleName" : "subAdmin2", "roleId" : "role12", "children" : [
+            { "roleName" : "subAdmin2-1", "roleId" : "role121", "children" : [
+              { "roleName" : "subAdmin2-1-1", "roleId" : "role1211", "children" : [] },
+              { "roleName" : "subAdmin2-1-2", "roleId" : "role1212", "children" : [] }
+            ]}
+          ]}
+        ]},
+
+        { "roleName" : "Guest", "roleId" : "role3", "children" : [
+          { "roleName" : "subGuest1", "roleId" : "role11", "children" : [] },
+          { "roleName" : "subGuest2", "roleId" : "role12", "collapsed" : true, "children" : [
+            { "roleName" : "subGuest2-1", "roleId" : "role121", "children" : [
+              { "roleName" : "subGuest2-1-1", "roleId" : "role1211", "children" : [] },
+              { "roleName" : "subGuest2-1-2", "roleId" : "role1212", "children" : [] }
+            ]}
+          ]}
+        ]}
+      ];
+
+      
+      
+    //roleList1 to treeview
+    $scope.roleList = $scope.roleList1;
+  
+  });
+  
+
